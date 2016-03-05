@@ -28,6 +28,15 @@ public class MainActivity extends AppCompatActivity {
         tv.setText(tv.getText().toString()+v.getTag().toString());
     }
 
+    public  void borrar(View v){
+
+        String cadena = tv.getText().toString();
+        if (tv.length()>= 1){
+            tv.setText(cadena.substring(0,tv.length()-1));
+        }
+
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
