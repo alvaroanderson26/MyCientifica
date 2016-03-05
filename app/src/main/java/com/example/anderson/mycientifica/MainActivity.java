@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public  void borrar(View v){
-
         String cadena = tv.getText().toString();
         if (tv.length()>= 1){
             tv.setText(cadena.substring(0,tv.length()-1));
