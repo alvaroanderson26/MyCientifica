@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.anderson.mycientifica.MainActivity" >
+    <item
+        android:id="@+id/opcion1"
+        app:showAsAction="never"
+        android:title="Ayuda "/>
+    <item
+        android:id="@+id/opcion2"
+        app:showAsAction="never"
+        android:title="Acerca de"/>
+</menu>

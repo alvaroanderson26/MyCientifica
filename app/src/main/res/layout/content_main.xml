@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_main"
+    tools:context="com.example.anderson.mycientifica.MainActivity"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="0"
+        android:inputType="number"
+        android:text=""
+        android:textSize="30dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margen_size"
+        >
+        <ImageButton
+            android:id="@+id/btn1"
+            android:layout_width="@dimen/btn_size1"
+            android:layout_height="@dimen/btn_size2"
+            android:tag=" "
+            android:src="@drawable/borrar"
+            />
+        <ImageButton
+            android:id="@+id/btn2"
+            android:layout_width="@dimen/btn_size1"
+            android:layout_height="@dimen/btn_size2"
+            android:tag="("
+            android:src="@drawable/abrir"
+
+            android:onClick="concatenar" />
+        <ImageButton
+            android:id="@+id/btn3"
+            android:layout_width="@dimen/btn_size1"
+            android:layout_height="@dimen/btn_size2"
+            android:tag=")"
+            android:src="@drawable/cerrar"
+
+            android:onClick="concatenar" />
+        <ImageButton
+            android:id="@+id/btn4"
+            android:layout_width="@dimen/btn_size1"
+            android:layout_height="@dimen/btn_size2"
+            android:tag="+"
+            android:src="@drawable/suma"
+
+            android:onClick="concatenar" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margen_size"
+        >
+        <ImageButton
+            android:id="@+id/btn5"
+            android:layout_width="@dimen/btn_size1"
+            android:layout_height="@dimen/btn_size2"
+            android:tag="7"
+            android:src="@drawable/siete"
+
+            android:onClick="concatenar" />
+        <ImageButton
+            android:id="@+id/btn6"
+            android:layout_width="@dimen/btn_size1"
+            android:layout_height="@dimen/btn_size2"
+            android:tag="8"
+            android:src="@drawable/ocho"
+
+            android:onClick="concatenar" />
+        <ImageButton
+            android:id="@+id/btn7"
+            android:layout_width="@dimen/btn_size1"
+            android:layout_height="@dimen/btn_size2"
+            android:tag="9"
+            android:src="@drawable/nueve"
+
+            android:onClick="concatenar" />
+        <ImageButton
+            android:id="@+id/btn8"
+            android:layout_width="@dimen/btn_size1"
+            android:layout_height="@dimen/btn_size2"
+            android:tag="-"
+            android:src="@drawable/resta"
+
+            android:onClick="concatenar" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margen_size"
+        >
+        <ImageButton
+            android:id="@+id/btn9"
+            android:layout_width="@dimen/btn_size1"
+            android:layout_height="@dimen/btn_size2"
+            android:tag="4"
+            android:src="@drawable/cuatro"
+
+            android:onClick="concatenar" />
+        <ImageButton
+            android:id="@+id/btn10"
+            android:layout_width="@dimen/btn_size1"
+            android:layout_height="@dimen/btn_size2"
+            android:tag="5"
+            android:src="@drawable/cinco"
+
+            android:onClick="concatenar" />
+        <ImageButton
+            android:id="@+id/btn11"
+            android:layout_width="@dimen/btn_size1"
+            android:layout_height="@dimen/btn_size2"
+            android:tag="6"
+            android:src="@drawable/seis"
+
+            android:onClick="concatenar" />
+        <ImageButton
+            android:id="@+id/btn12"
+            android:layout_width="@dimen/btn_size1"
+            android:layout_height="@dimen/btn_size2"
+            android:tag="*"
+            android:src="@drawable/multiplicacion"
+
+            android:onClick="concatenar" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margen_size"
+        >
+        <ImageButton
+            android:id="@+id/btn13"
+            android:layout_width="@dimen/btn_size1"
+            android:layout_height="@dimen/btn_size2"
+            android:tag="1"
+            android:src="@drawable/uno"
+
+            android:onClick="concatenar" />
+        <ImageButton
+            android:id="@+id/btn14"
+            android:layout_width="@dimen/btn_size1"
+            android:layout_height="@dimen/btn_size2"
+            android:tag="2"
+            android:src="@drawable/dos"
+
+            android:onClick="concatenar" />
+        <ImageButton
+            android:id="@+id/btn15"
+            android:layout_width="@dimen/btn_size1"
+            android:layout_height="@dimen/btn_size2"
+            android:tag="3"
+            android:src="@drawable/tres"
+
+            android:onClick="concatenar" />
+        <ImageButton
+            android:id="@+id/btn16"
+            android:layout_width="@dimen/btn_size1"
+            android:layout_height="@dimen/btn_size2"
+            android:tag="/"
+            android:src="@drawable/division"
+
+            android:onClick="concatenar" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margen_size"
+        >
+        <ImageButton
+            android:id="@+id/btn17"
+            android:layout_width="@dimen/btn_size1"
+            android:layout_height="@dimen/btn_size2"
+            android:tag="."
+            android:src="@drawable/punto"
+
+            android:onClick="concatenar" />
+        <ImageButton
+            android:id="@+id/btn18"
+            android:layout_width="@dimen/btn_size1"
+            android:layout_height="@dimen/btn_size2"
+            android:tag="0"
+            android:src="@drawable/cero"
+
+            android:onClick="concatenar" />
+        <ImageButton
+            android:id="@+id/btn19"
+            android:layout_width="@dimen/btn_size1"
+            android:layout_height="@dimen/btn_size2"
+            android:tag="^"
+            android:src="@drawable/potencia"
+
+            android:onClick="concatenar" />
+        <ImageButton
+            android:id="@+id/btn20"
+            android:layout_width="@dimen/btn_size1"
+            android:layout_height="@dimen/btn_size2"
+            android:tag="-/+"
+            android:src="@drawable/menosmas"
+
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margen_size"
+        >
+        <ImageButton
+            android:id="@+id/btn21"
+            android:layout_width="@dimen/btn_size1"
+            android:layout_height="@dimen/btn_size2"
+            android:tag="sen"
+            android:src="@drawable/sen"
+
+            />
+        <ImageButton
+            android:id="@+id/btn22"
+            android:layout_width="@dimen/btn_size1"
+            android:layout_height="@dimen/btn_size2"
+            android:tag="cos"
+            android:src="@drawable/cos"
+
+            />
+        <ImageButton
+            android:id="@+id/btn23"
+            android:layout_width="@dimen/btn_size1"
+            android:layout_height="@dimen/btn_size2"
+            android:tag="tan"
+            android:src="@drawable/tan"
+
+            />
+        <ImageButton
+            android:id="@+id/btn24"
+            android:layout_width="@dimen/btn_size1"
+            android:layout_height="@dimen/btn_size2"
+            android:tag="="
+            android:src="@drawable/igual"
+
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
