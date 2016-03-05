@@ -8,29 +8,72 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.anderson.mycientifica.Historial"
-    android:orientation="vertical">
-    <TextView
+    android:orientation="vertical"
+    android:background="#f765afe4">
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Historial"
+        android:layout_weight="5">
 
-        />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="salir"
-        android:onClick="salir" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+           android:layout_weight="70"
+            android:text="Historial de Operaciones"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+
+            />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="30"
+            android:src="@drawable/reloj2"/>
+    </LinearLayout>
+
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/scrollView" >
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        android:layout_weight="70">
 
         <TextView
             android:id="@+id/tv2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="00"/>
+            android:text="00"
+            android:textSize="20dp"
+            android:textColor="#ffffff"/>
     </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="5">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="@dimen/btn_size_historial"
+            android:layout_weight="1"
+            android:text="salir"
+            android:onClick="salir" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="@dimen/btn_size_historial"
+            android:layout_weight="2"
+            android:text="Eliminar Registro"
+            android:onClick="borrar" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="@dimen/btn_size_historial"
+            android:layout_weight="1"
+            android:text="borrar"
+            android:onClick="borrar" />
+
+    </LinearLayout>
+
+
 
 </LinearLayout>

@@ -7,4 +7,5 @@
     <dimen name="btn_size2">65dp</dimen>
     <dimen name="txt_size">150sp</dimen>
     <dimen name="margen_size">2dp</dimen>
+    <dimen name="btn_size_historial">60dp</dimen>
 </resources>

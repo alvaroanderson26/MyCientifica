@@ -64,6 +64,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void grabar(View v) {
+
+        //almacenar en memoria con SharedPreference
+
+        SharedPreferences preferencias=getSharedPreferences("datos", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor=preferencias.edit();
+        editor.putString("numero", tv.getText().toString());
+        editor.commit();
+
+        ////______________________________
+
         try {
             OutputStreamWriter archivo = new OutputStreamWriter(openFileOutput(
                     "notas.txt", Activity.MODE_APPEND));
