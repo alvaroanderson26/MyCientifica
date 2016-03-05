@@ -1,6 +1,9 @@
 package com.example.anderson.mycientifica;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,6 +15,11 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
 public class MainActivity extends AppCompatActivity {
     TextView tv ;
     @Override
@@ -21,6 +29,13 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         tv= (TextView) findViewById(R.id.tv1);
+        SharedPreferences prefe=getSharedPreferences("datos", Context.MODE_PRIVATE);
+        tv.setText(prefe.getString("numero", ""));
+
+
+
+
+
 
     }
 
@@ -35,6 +50,34 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    public void ejecutar(View v) {
+        SharedPreferences preferencias=getSharedPreferences("datos", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor=preferencias.edit();
+        editor.putString("numero", tv.getText().toString());
+        editor.commit();
+
+        Toast.makeText(this, "Guardado...", Toast.LENGTH_LONG).show();
+    }
+
+
+
+
+    public void grabar(View v) {
+        try {
+            OutputStreamWriter archivo = new OutputStreamWriter(openFileOutput(
+                    "notas.txt", Activity.MODE_APPEND));
+            archivo.write(tv.getText().toString()+"\n");
+            archivo.flush();
+            archivo.close();
+        } catch (IOException e) {
+        }
+        Toast t = Toast.makeText(this, "Los datos fueron grabados",
+                Toast.LENGTH_SHORT);
+        t.show();
+
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -59,6 +102,11 @@ public class MainActivity extends AppCompatActivity {
 
         if (id==R.id.opcion2) {
             Intent i=new Intent(this,AcercaDe.class);
+            startActivity(i);
+        }
+
+        if (id==R.id.opcion3) {
+            Intent i=new Intent(this,Historial.class);
             startActivity(i);
         }
         return super.onOptionsItemSelected(item);

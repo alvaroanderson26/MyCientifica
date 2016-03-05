@@ -10,4 +10,8 @@
         android:id="@+id/opcion2"
         app:showAsAction="never"
         android:title="Acerca de"/>
+    <item
+        android:id="@+id/opcion3"
+        app:showAsAction="never"
+        android:title="Historial"/>
 </menu>

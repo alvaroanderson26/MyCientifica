@@ -251,7 +251,7 @@
             android:tag="="
             android:src="@drawable/igual"
 
-            />
+            android:onClick="grabar" />
 
     </LinearLayout>
 

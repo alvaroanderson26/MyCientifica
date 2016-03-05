@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Ayuda" />
-        <activity android:name=".AcercaDe"></activity>
+        <activity android:name=".AcercaDe" />
+        <activity android:name=".Historial"></activity>
     </application>
 
 </manifest>
