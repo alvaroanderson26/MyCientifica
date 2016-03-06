@@ -72,7 +72,7 @@ public class Historial extends AppCompatActivity {
                 Toast.LENGTH_SHORT);
         t.show();
 
-        //iniciar nuevamente el activity
+        // iniciar nuevamente el activity
         Intent i=new Intent(this,Historial.class);
         startActivity(i);
     }
