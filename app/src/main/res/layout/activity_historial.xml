@@ -63,7 +63,7 @@
             android:layout_height="@dimen/btn_size_historial"
             android:layout_weight="2"
             android:text="Eliminar Registro"
-            android:onClick="borrar" />
+            android:onClick="eliminar" />
 
         <Button
             android:layout_width="0dp"

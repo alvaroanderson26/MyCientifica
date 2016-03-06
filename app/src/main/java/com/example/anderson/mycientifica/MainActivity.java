@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         tv= (TextView) findViewById(R.id.tv1);
+
         SharedPreferences prefe=getSharedPreferences("datos", Context.MODE_PRIVATE);
         tv.setText(prefe.getString("numero", ""));
 
@@ -74,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
 
         ////______________________________
 
+
+
         try {
             OutputStreamWriter archivo = new OutputStreamWriter(openFileOutput(
                     "notas.txt", Activity.MODE_APPEND));
@@ -82,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
             archivo.close();
         } catch (IOException e) {
         }
-        Toast t = Toast.makeText(this, "Los datos fueron grabados",
+        Toast t = Toast.makeText(this, "Los datos fueron grabados: ",
                 Toast.LENGTH_SHORT);
         t.show();
 
