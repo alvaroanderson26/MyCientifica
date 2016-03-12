@@ -45,22 +45,31 @@ public class MainActivity extends AppCompatActivity {
     public  void concatenar(View v){
         String cadena=tv.getText().toString();
         String numero= v.getTag().toString();
+        int ban=0;
         int n=tv.length();
         String ultimo=cadena.substring(n - 1, n);
 
+
+        if (tv.length()==1 && cadena.compareTo("0")==0 ){
+            ban=1;
+        }
 
         if (numero.compareTo(".")==0 && a==0){
 
             tv.setText(tv.getText().toString() + v.getTag().toString());
         }
 
-        else if (numero.compareTo("+")==0 && b==0){
+        else if ((numero.compareTo("+")==0||numero.compareTo("-")==0||
+                numero.compareTo("*")==0||numero.compareTo("/")==0) && b==0){
             tv.setText(tv.getText().toString() + v.getTag().toString());
         }
         else if (numero.compareTo("1")==0||numero.compareTo("2")==0||numero.compareTo("3")==0||
                 numero.compareTo("4")==0||numero.compareTo("5")==0||numero.compareTo("6")==0||
                 numero.compareTo("7")==0||numero.compareTo("8")==0||numero.compareTo("9")==0||
                 numero.compareTo("0")==0){
+            if (ban==1){
+                tv.setText("");
+            }
             tv.setText(tv.getText().toString() + v.getTag().toString());
         }
         else if (numero.compareTo("(")==0){
@@ -77,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         if (numero.compareTo(".")==0){
             a=a+1;
         }
-        if (numero.compareTo("+")==0){
+        if (numero.compareTo("+")==0||numero.compareTo("-")==0||numero.compareTo("*")==0){
             b=b+1;
             a=0;
         }
@@ -90,11 +99,13 @@ public class MainActivity extends AppCompatActivity {
         }
         if (numero.compareTo("(")==0){
             c=c+1;
+
             Toast.makeText(this, ""+c, Toast.LENGTH_LONG).show();
         }
         if (numero.compareTo(")")==0){
-            d=d+1;
+           if (c>0){
             c=c-1;
+           }
             Toast.makeText(this, "c= "+c+"  d= "+d, Toast.LENGTH_LONG).show();
         }
 
@@ -128,10 +139,14 @@ public class MainActivity extends AppCompatActivity {
 
     public  void borrar(View v){
         String cadena = tv.getText().toString();
-        if (tv.length()>= 1){
+        int lon=tv.length();
+        if (tv.length()> 1){
             tv.setText(cadena.substring(0,tv.length()-1));
+        }else {
+            tv.setText("0");
         }
-
+        //cadena = tv.getText().toString();
+        //Toast.makeText(this, "" +cadena+"longi: "+lon, Toast.LENGTH_LONG).show();
     }
 
     public void ejecutar(View v) {
