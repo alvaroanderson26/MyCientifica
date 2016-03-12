@@ -22,6 +22,8 @@ import java.io.OutputStreamWriter;
 
 public class MainActivity extends AppCompatActivity {
     TextView tv ;
+    int a=0,b=0,c=0,d=0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +43,87 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public  void concatenar(View v){
-        tv.setText(tv.getText().toString()+v.getTag().toString());
+        String cadena=tv.getText().toString();
+        String numero= v.getTag().toString();
+        int n=tv.length();
+        String ultimo=cadena.substring(n - 1, n);
+
+
+        if (numero.compareTo(".")==0 && a==0){
+
+            tv.setText(tv.getText().toString() + v.getTag().toString());
+        }
+
+        else if (numero.compareTo("+")==0 && b==0){
+            tv.setText(tv.getText().toString() + v.getTag().toString());
+        }
+        else if (numero.compareTo("1")==0||numero.compareTo("2")==0||numero.compareTo("3")==0||
+                numero.compareTo("4")==0||numero.compareTo("5")==0||numero.compareTo("6")==0||
+                numero.compareTo("7")==0||numero.compareTo("8")==0||numero.compareTo("9")==0||
+                numero.compareTo("0")==0){
+            tv.setText(tv.getText().toString() + v.getTag().toString());
+        }
+        else if (numero.compareTo("(")==0){
+            tv.setText(tv.getText().toString() + v.getTag().toString());
+
+        }
+        else if (numero.compareTo(")")==0 && c>0){
+            tv.setText(tv.getText().toString() + v.getTag().toString());
+
+        }
+
+
+
+        if (numero.compareTo(".")==0){
+            a=a+1;
+        }
+        if (numero.compareTo("+")==0){
+            b=b+1;
+            a=0;
+        }
+
+        if (numero.compareTo("1")==0||numero.compareTo("2")==0||numero.compareTo("3")==0||
+                numero.compareTo("4")==0||numero.compareTo("5")==0||numero.compareTo("6")==0||
+                numero.compareTo("7")==0||numero.compareTo("8")==0||numero.compareTo("9")==0||
+                numero.compareTo("0")==0){
+            b=0;
+        }
+        if (numero.compareTo("(")==0){
+            c=c+1;
+            Toast.makeText(this, ""+c, Toast.LENGTH_LONG).show();
+        }
+        if (numero.compareTo(")")==0){
+            d=d+1;
+            c=c-1;
+            Toast.makeText(this, "c= "+c+"  d= "+d, Toast.LENGTH_LONG).show();
+        }
+
+
+
+        /*int bandera = 0;
+        int bandera2 = 0;
+        int bandera3=0;
+
+
+        if ((ultimo.compareTo(".")==0)&& numero.compareTo(".")==0 ){
+             bandera=1;
+        }
+        if (numero.compareTo(".")==0){
+            bandera3=1;
+        }
+        if ((numero.compareTo("*")!=0 ||numero.compareTo("+")!=0||numero.compareTo("/")!=0||numero.compareTo("-")!=0)){
+            bandera2=1;
+        }else{
+            bandera2=0;
+            bandera3=0;
+        }
+
+        if (bandera2==1){}
+        else {
+            tv.setText(tv.getText().toString() + v.getTag().toString());
+        }
+        */
+
     }
 
     public  void borrar(View v){
