@@ -99,6 +99,6 @@ public class Historial extends AppCompatActivity {
             } catch (IOException e) {
             }
 
-        contador=contador-1;
+        contador = contador-1;
     }
 }
